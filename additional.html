@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Додаткова інформація КС11</title>
+  <style>
+    :root{
+      --bg:#0f1222; --card:#161a2f; --text:#e8eaf6; --muted:#b6b9d6;
+      --accent:#6c5ce7; --accent-2:#00d4ff; --ok:#22c55e;
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --shadow-soft:0 6px 18px rgba(0,0,0,.25); --ring:0 0 0 3px rgba(108,92,231,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial;}
+    body{color:var(--text);background:radial-gradient(1200px 1200px at 10% 10%,#172044 0%,#0f1222 50%,#0d0f1b 100%)}
+    .container{max-width:1100px;margin:0 auto;padding:40px 20px 60px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .title{font-size:clamp(22px,3vw,34px);font-weight:800;letter-spacing:.2px}
+    .subtitle{color:var(--muted);font-size:clamp(14px,2vw,16px)}
+    .grid{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+    .card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);transition:.18s;overflow:hidden}
+    .card::after{content:'';position:absolute;inset:auto -20% -60% -20%;height:60%;background:radial-gradient(60% 60% at 50% 0%,rgba(0,212,255,.25) 0%,transparent 70%);pointer-events:none}
+    .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.45);border-color:rgba(108,92,231,.6)}
+    .badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);background:rgba(108,92,231,.12);border:1px solid rgba(108,92,231,.35);padding:6px 10px;border-radius:999px;margin-bottom:10px}
+    .icon{font-size:28px;line-height:1}
+    .card h3{margin:8px 0 6px;font-size:18px}
+    .card p{margin:0 0 14px;color:var(--muted);font-size:14px;min-height:40px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{appearance:none;border:0;cursor:pointer;user-select:none;padding:10px 12px;border-radius:12px;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0b0f1a;flex:1;box-shadow:var(--shadow-soft);transition:.1s}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.16);flex:0 0 auto}
+    footer{margin-top:30px;color:var(--muted);font-size:13px;text-align:center}
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div>
+      <div class="title">Додаткова інформація КС11</div>
+      <div class="subtitle">Тут буде додаткова інформація по предметам, розкладу та ресурсах.</div>
+    </div>
+    <div>
+      <a href="index.html" class="btn" style="flex:0 0 auto;">Назад</a>
+    </div>
+  </header>
+
+  <main class="grid">
+    <article class="card">
+      <div class="badge"><span class="icon">📌</span><span>Ютуб</span></div>
+      <h3>Записи лекцій</h3>
+      <p>Лекції записані у відео форматі.</p>
+      <div class="actions">
+        <a class="btn" href="СЫЛКА" target="_blank">Відкрити</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="badge"><span class="icon">📌</span><span>Ресурси</span></div>
+      <h3>Telegram з куратором</h3>
+      <p>Приєднуйтесь до Telegram для обговорень та консультацій.</p>
+      <div class="actions">
+        <a class="btn" href="https://t.me/+x_TEGq-X9kgwNTUy" target="_blank">Відкрити</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="badge"><span class="icon">📌</span><span>інформація</span></div>
+      <h3>Гугл диск</h3>
+      <p>Загальна інформація від деканату.</p>
+      <div class="actions">
+        <a class="btn" href="https://drive.google.com/drive/folders/0B3br2wqv1b06UFpOVGUzcTA1Vnc?resourcekey=0-qzfOja_Y1Td05uJ-vpb08w" target="_blank">Відкрити</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>© <span id="year"></span> Расписание КС11. Демоверсия.</footer>
+</div>
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</>
